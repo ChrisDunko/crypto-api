@@ -15,10 +15,9 @@ class TransactionController extends Controller
 //            'quantity' => 'required',
 //            'price' => 'required',
 //        ]);
-        return response('hmm...', 200);
-        dd('hmm');
         $post = file_get_contents('php://input');
         $postObject = json_decode($post);
+        return response($postObject, 200);
 
 
         $transaction = new Transaction();
