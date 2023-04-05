@@ -9,7 +9,9 @@ class Quote extends Model
 {
     use HasFactory;
 
-    public function getCurrentQuote($currency) {
-        //
+    public function getCurrent($currency) {
+        $quote = file_get_contents("https://min-api.cryptocompare.com/data/price?fsym=". $currency ."&tsyms=CHF");
+        $quoteObject = json_decode($quote);
+        dd($quoteObject->CHF);
     }
 }

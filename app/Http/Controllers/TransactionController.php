@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Quote;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 class TransactionController extends Controller
 {
     public function add(Request $request) {
+        $eth = Quote::getCurrent('ETH');
+
 //        $validated = $request->validate([
 //            'date' => 'required',
 //            'currency' => 'ETH'|'BTC'|'XRP',
@@ -29,7 +32,14 @@ class TransactionController extends Controller
     }
 
     public function transactions() {
+
+
         $transactions = Transaction::getTransactions();
         return response(json_encode($transactions), 200);
+    }
+
+    public function getQuotes() {
+        $eth = Quote::getCurrent('ETH');
+
     }
 }
