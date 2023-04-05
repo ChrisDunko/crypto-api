@@ -31,6 +31,6 @@ class TransactionController extends Controller
     public function getQuotes() {
         $eth = Quote::getCurrent('ETH');
 
-        return response('quote', 200);
+        return response($eth, 200);
     }
 }
