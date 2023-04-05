@@ -15,8 +15,10 @@ class TransactionController extends Controller
 //            'quantity' => 'required',
 //            'price' => 'required',
 //        ]);
-        print_r($request);
-        exit();
+        $post = file_get_contents('php://input');
+        $postObject = json_decode($post);
+
+        dd($postObject);
 
         $transaction = new Transaction();
         $transaction->date = $request->input('date');
