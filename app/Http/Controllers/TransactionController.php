@@ -21,7 +21,7 @@ class TransactionController extends Controller
 
 
         $transaction = new Transaction();
-        $transaction->date = $postObject->date);
+        $transaction->date = $postObject->date;
         $transaction->currency = $postObject->currency;
         $transaction->quantity = $postObject->quantity;
         $transaction->price = $postObject->price;
