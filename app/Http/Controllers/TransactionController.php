@@ -10,18 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 class TransactionController extends Controller
 {
     public function add(Request $request) {
-        $eth = Quote::getCurrent('ETH');
-
-//        $validated = $request->validate([
-//            'date' => 'required',
-//            'currency' => 'ETH'|'BTC'|'XRP',
-//            'quantity' => 'required',
-//            'price' => 'required',
-//        ]);
         $post = file_get_contents('php://input');
         $postObject = json_decode($post);
-//        return response($post, 200);
-
 
         $transaction = new Transaction();
         $transaction->date = $postObject->date;
@@ -32,8 +22,6 @@ class TransactionController extends Controller
     }
 
     public function transactions() {
-
-
         $transactions = Transaction::getTransactions();
         return response(json_encode($transactions), 200);
     }
