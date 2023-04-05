@@ -17,7 +17,7 @@ class TransactionController extends Controller
 //        ]);
         $post = file_get_contents('php://input');
         $postObject = json_decode($post);
-        return response($postObject, 200);
+        return response($post, 200);
 
 
         $transaction = new Transaction();
