@@ -17,14 +17,14 @@ class TransactionController extends Controller
 //        ]);
         $post = file_get_contents('php://input');
         $postObject = json_decode($post);
-        return response($post, 200);
+//        return response($post, 200);
 
 
         $transaction = new Transaction();
-        $transaction->date = $request->input('date');
-        $transaction->currency = $request->input('currency');
-        $transaction->quantity = $request->input('quantity');
-        $transaction->price = $request->input('price');
+        $transaction->date = $postObject->date);
+        $transaction->currency = $postObject->currency;
+        $transaction->quantity = $postObject->quantity;
+        $transaction->price = $postObject->price;
         return $transaction->save();
     }
 
