@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class TransactionController extends Controller
 {
     public function add(Request $request) {
+        // TODO: enum for valid currencies
         $validated = $request->validate([
             'date' => 'required',
             'currency' => 'required',
