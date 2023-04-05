@@ -26,7 +26,7 @@ class TransactionController extends Controller
 
         $transactions = Transaction::getTransactions();
         foreach ($transactions as $transaction) {
-            $transaction->currently = Quote::getCurrent($transaction->currency)
+            $transaction->currently = Quote::getCurrent($transaction->currency);
         }
         return response(json_encode($transactions), 200);
     }
