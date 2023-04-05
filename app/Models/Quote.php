@@ -12,6 +12,6 @@ class Quote extends Model
     public static function getCurrent($currency) {
         $quote = file_get_contents("https://min-api.cryptocompare.com/data/price?fsym=". $currency ."&tsyms=CHF");
         $quoteObject = json_decode($quote);
-        return $quoteObject->CHF;
+        dd($quoteObject->CHF);
     }
 }
