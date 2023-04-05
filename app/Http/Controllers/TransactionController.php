@@ -29,6 +29,8 @@ class TransactionController extends Controller
     }
 
     public function getQuotes() {
+        dd('quote');
+
         $eth = Quote::getCurrent('ETH');
 
     }

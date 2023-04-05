@@ -21,3 +21,4 @@ use Illuminate\Support\Facades\Route;
 // TODO: refactor naming
 Route::get('transactions', [\App\Http\Controllers\TransactionController::class, 'transactions']);
 Route::post('transaction', [\App\Http\Controllers\TransactionController::class, 'add']);
+Route::get('quotes', [\App\Http\Controllers\TransactionController::class, 'getQuotes']);
