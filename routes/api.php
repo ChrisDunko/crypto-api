@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+// TODO: refactor naming
+Route::get('transactions', [\App\Http\Controllers\TransactionController::class, 'transactions']);
+Route::post('transaction', [\App\Http\Controllers\TransactionController::class, 'add']);
