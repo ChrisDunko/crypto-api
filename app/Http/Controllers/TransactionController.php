@@ -30,7 +30,9 @@ class TransactionController extends Controller
 
     public function getQuotes() {
         $eth = Quote::getCurrent('ETH');
+        $btc = Quote::getCurrent('BTC');
+        $xrp = Quote::getCurrent('XRP');
 
-        return response($eth, 200);
+        return response($btc, 200);
     }
 }
