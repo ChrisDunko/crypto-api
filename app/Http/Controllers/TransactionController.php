@@ -9,15 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 class TransactionController extends Controller
 {
     public function add(Request $request) {
-        return 'yup';
-
-
-        $validated = $request->validate([
-            'date' => 'required',
-            'currency' => 'ETH'|'BTC'|'XRP',
-            'quantity' => 'required',
-            'price' => 'required',
-        ]);
+//        $validated = $request->validate([
+//            'date' => 'required',
+//            'currency' => 'ETH'|'BTC'|'XRP',
+//            'quantity' => 'required',
+//            'price' => 'required',
+//        ]);
         $transaction = new Transaction();
         $transaction->date = $request->input('date');
         $transaction->currency = $request->input('currency');
