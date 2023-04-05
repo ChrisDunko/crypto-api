@@ -15,7 +15,9 @@ class TransactionController extends Controller
 //            'quantity' => 'required',
 //            'price' => 'required',
 //        ]);
-        dd($request);
+        print_r($request);
+        exit();
+
         $transaction = new Transaction();
         $transaction->date = $request->input('date');
         $transaction->currency = $request->input('currency');
