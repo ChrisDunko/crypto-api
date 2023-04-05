@@ -22,8 +22,6 @@ class TransactionController extends Controller
     }
 
     public function transactions() {
-        $this->getQuotes("BTC");
-
         $transactions = Transaction::getTransactions();
         // TODO: foreach for collections...
 //        foreach ($transactions as $transaction) {
