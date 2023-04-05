@@ -22,6 +22,8 @@ class TransactionController extends Controller
     }
 
     public function transactions() {
+        $this->getQuotes("BTC");
+
         $transactions = Transaction::getTransactions();
         return response(json_encode($transactions), 200);
     }
