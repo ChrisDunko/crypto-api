@@ -18,7 +18,7 @@ class TransactionController extends Controller
         $post = file_get_contents('php://input');
         $postObject = json_decode($post);
 
-        dd($postObject->date);
+        dd('hmm');
 
         $transaction = new Transaction();
         $transaction->date = $request->input('date');
