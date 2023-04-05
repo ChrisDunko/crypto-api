@@ -18,7 +18,7 @@ class Transaction extends Model
     ];
 
     public static function getTransactions() {
-        $transactions = Transaction::all();
+        return Transaction::all();
     }
 
     protected function price(): Attribute {
