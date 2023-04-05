@@ -25,9 +25,10 @@ class TransactionController extends Controller
         $this->getQuotes("BTC");
 
         $transactions = Transaction::getTransactions();
-        foreach ($transactions as $transaction) {
-            $transaction->currently = Quote::getCurrent($transaction->currency);
-        }
+        // TODO: foreach for collections...
+//        foreach ($transactions as $transaction) {
+//            $transaction->currently = Quote::getCurrent($transaction->currency);
+//        }
         return response(json_encode($transactions), 200);
     }
 
